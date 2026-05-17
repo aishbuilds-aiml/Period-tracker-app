@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Menstrual Health Awareness Website Design System
+   Color Palette: Soft pink, lavender, beige, white
+   All colors in HSL format
+*/
+
+@layer base {
+  :root {
+    /* Soft pink-based background */
+    --background: 0 0% 100%;
+    --foreground: 340 20% 20%;
+
+    /* Card styling - soft cream/beige */
+    --card: 30 50% 98%;
+    --card-foreground: 340 20% 20%;
+
+    /* Popover styling */
+    --popover: 0 0% 100%;
+    --popover-foreground: 340 20% 20%;
+
+    /* Primary - Soft rose pink */
+    --primary: 340 70% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Soft lavender */
+    --secondary: 270 50% 92%;
+    --secondary-foreground: 270 30% 30%;
+
+    /* Muted - Light beige */
+    --muted: 30 40% 96%;
+    --muted-foreground: 340 10% 45%;
+
+    /* Accent - Light pink */
+    --accent: 350 80% 95%;
+    --accent-foreground: 340 60% 40%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders and inputs */
+    --border: 340 30% 90%;
+    --input: 340 30% 90%;
+    --ring: 340 70% 65%;
+
+    --radius: 0.75rem;
+
+    /* Custom theme colors */
+    --pink-soft: 350 80% 95%;
+    --pink-medium: 340 70% 85%;
+    --pink-dark: 340 60% 65%;
+    --lavender-soft: 270 60% 95%;
+    --lavender-medium: 270 50% 85%;
+    --beige-soft: 30 50% 96%;
+    --beige-medium: 30 40% 90%;
+    --cream: 40 60% 97%;
+
+    /* Gradient definitions */
+    --gradient-hero: linear-gradient(135deg, hsl(350 80% 95%) 0%, hsl(270 60% 95%) 50%, hsl(30 50% 96%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(350 80% 98%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(340 70% 85%) 0%, hsl(270 50% 85%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(340 30% 80% / 0.3);
+    --shadow-card: 0 8px 30px -8px hsl(340 30% 70% / 0.2);
+
+    /* Sidebar */
+    --sidebar-background: 350 80% 98%;
+    --sidebar-foreground: 340 20% 30%;
+    --sidebar-primary: 340 70% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 270 50% 92%;
+    --sidebar-accent-foreground: 270 30% 30%;
+    --sidebar-border: 340 30% 90%;
+    --sidebar-ring: 340 70% 65%;
+  }
+
+  .dark {
+    --background: 340 20% 10%;
+    --foreground: 350 20% 95%;
+
+    --card: 340 15% 15%;
+    --card-foreground: 350 20% 95%;
+
+    --popover: 340 15% 12%;
+    --popover-foreground: 350 20% 95%;
+
+    --primary: 340 60% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 270 30% 25%;
+    --secondary-foreground: 270 30% 90%;
+
+    --muted: 340 15% 20%;
+    --muted-foreground: 340 15% 65%;
+
+    --accent: 340 40% 25%;
+    --accent-foreground: 340 60% 85%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 340 15% 25%;
+    --input: 340 15% 25%;
+    --ring: 340 60% 60%;
+
+    --sidebar-background: 340 20% 12%;
+    --sidebar-foreground: 350 20% 90%;
+    --sidebar-primary: 340 60% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 270 30% 25%;
+    --sidebar-accent-foreground: 270 30% 90%;
+    --sidebar-border: 340 15% 25%;
+    --sidebar-ring: 340 60% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.3);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.5);
+  }
+}
+
+@layer utilities {
+  /* Gradient backgrounds */
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .bg-gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  /* Soft shadows */
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Glass effect */
+  .glass {
+    backdrop-filter: blur(12px);
+    background: hsl(var(--background) / 0.8);
+  }
+
+  /* Text gradient */
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(270 50% 60%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
